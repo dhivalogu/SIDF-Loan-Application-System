@@ -1,4 +1,134 @@
 <div class="flex-container">
-  <div class="flex-left">Hi</div>
-  <div class="flex-right">Dhiva</div>
+
+  <div class="flex-left">
+
+    <div class="flex-left-item1">
+      <img class="logo" [src]="logo" />
+    </div>
+
+    <div class="flex-left-item2">
+      <mat-card class="card"> 
+        <!--Angular Material Card for login form-->
+
+        <span class="login-title"> Welcome to SIDF Client Portal </span>
+        <span style="color: #42ad4e; align-self: center">Trial Release
+          <mat-icon> info </mat-icon>
+        </span>
+
+
+        <span class="label">User ID</span>
+        <mat-form-field appearance="outline">
+          <input matInput placeholder="Enter User ID" [(ngModel)]="user_id" />
+          <mat-icon matSuffix matTooltip="Info about the action">info</mat-icon>
+        </mat-form-field>
+
+
+        <span class="label">Password</span>
+        <mat-form-field appearance="outline">
+          <input type="password" required matInput placeholder="Enter Password" [(ngModel)]="password"/>
+          <mat-icon matSuffix matTooltip="Info about the action">visibilityon</mat-icon>
+        </mat-form-field>
+
+
+        <div class="forgot-password">
+          <button (click)="check()"><a>Forgot Password?</a></button>
+        </div>
+
+
+        <button style="background-color: #42ad4e" mat-raised-button (click)="login()">Sign In</button>
+
+
+        <p *ngIf="wrongPassword" style="color: red; text-align: center">
+          User ID/Password is wrong,Try Again.
+        </p>
+
+
+        <span>Don't have an account? 
+          <a>
+            <button (click)="check()" style="color: #42ad4e"> Sign Up</button>
+          </a>
+        </span>
+
+
+        <span class="login-note">
+          Note: User ID can be National ID / Iqama ID / SAGIA License Number /
+          GCC National ID of Owner or Representative
+        </span>
+
+
+        <div class="flex-container-vision-logo">
+
+          <span>
+            <img class="vision-logo" [src]="vision_logo" />
+          </span>
+          <span><div class="vl-black"></div></span>
+          <span>
+            <p>
+              <a><span class="policy-span">Contact Us</span></a>
+              <span>-</span>
+              <a><span class="policy-span">Privacy Policy</span></a>
+              <span>-</span>
+              <a><span class="policy-span">FAQ</span></a>
+            </p>
+            <p class="copyright-content">
+              © 2022 Copyright, All Rights Reserved
+            </p>
+          </span>
+        </div>
+
+
+      </mat-card>
+    </div>
+  </div>
+
+
+  <div class="flex-right">
+
+
+    <div class="flex-right-item1">
+      <button mat-button style="align-self: flex-end">
+        <mat-icon>language</mat-icon>English
+      </button>
+    </div>
+
+
+    <div class="flex-right-item2">
+
+      <p class="content-title">The Logistics Sector</p>
+
+
+      <span class="content"
+        >SIDF offers financing solutions to contribute to transforming KSA into
+        a global logistics center, by supporting transportation and storage
+        service providers, financing warehouses and transportation means; and
+        supporting IT for logistics services, and infrastructure projects for
+        air, dry and sea ports. SIDF offers financing solutions to contribute to
+        transforming KSA.
+      </span>
+
+
+      <button mat-raised-button style="background-color: #42ad4e">
+        Explore More
+      </button>
+
+
+    </div>
+
+    <div class="flex-right-item3">
+      <mat-icon>twitter</mat-icon>
+      <mat-icon>facebook</mat-icon>
+      <mat-icon>instagram</mat-icon>
+      <mat-icon>youtube</mat-icon>
+      <mat-icon>linkedin</mat-icon>
+
+      <div class="vl-white"></div>
+
+      <button class="store-button" mat-button>
+        <img class="store-img" [src]="appStore" />
+      </button>
+
+      <button class="store-button" mat-button><img [src]="playStore" /></button>
+    </div>
+
+  </div>
 </div>
