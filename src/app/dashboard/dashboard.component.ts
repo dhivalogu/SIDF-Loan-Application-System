@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardComponent implements OnInit {
 
+  sidf_menu_logo="assets/images/SIDF_menu_logo.svg"
   constructor() { }
 
   ngOnInit(): void {
