@@ -8,11 +8,17 @@ import { MaterialModule } from './material/material.module';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { LoginService } from './services/login.service';
+import { LoanRequestComponent } from './loan-request/loan-request.component';
+import { IlrOrgInfoComponent } from './loan-request/ilr-org-info/ilr-org-info.component';
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    DashboardComponent
+    DashboardComponent,
+    LoanRequestComponent,
+    IlrOrgInfoComponent
   ],
   imports: [
     BrowserModule,
@@ -20,9 +26,10 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     BrowserAnimationsModule,
     MaterialModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
-  providers: [],
+  providers: [LoginService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

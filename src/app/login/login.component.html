@@ -1,3 +1,4 @@
+
 <div class="flex-container">
 
   <div class="flex-left">
@@ -15,20 +16,21 @@
           <mat-icon> info </mat-icon>
         </span>
 
-
-        <span class="label">User ID</span>
+        <form [formGroup]="loginForm">
         <mat-form-field appearance="outline">
-          <input matInput placeholder="Enter User ID" [(ngModel)]="user_id" />
+          <!--<input matInput placeholder="Enter User ID" [(ngModel)]="user_id" />-->
+          <mat-label>User ID</mat-label>
+          <input  formControlName="user_id" matInput>
+          
           <mat-icon matSuffix matTooltip="Info about the action">info</mat-icon>
         </mat-form-field>
 
-
-        <span class="label">Password</span>
+       
         <mat-form-field appearance="outline">
-          <input type="password" required matInput placeholder="Enter Password" [(ngModel)]="password"/>
+          <mat-label>Password</mat-label>
+          <input formControlName="password" matInput placeholder="Enter Password" />
           <mat-icon matSuffix matTooltip="Info about the action">visibilityon</mat-icon>
         </mat-form-field>
-
 
         <div class="forgot-password">
           <button (click)="check()"><a>Forgot Password?</a></button>
@@ -41,7 +43,7 @@
         <p *ngIf="wrongPassword" style="color: red; text-align: center">
           User ID/Password is wrong,Try Again.
         </p>
-
+      </form>
 
         <span>Don't have an account? 
           <a>

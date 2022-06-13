@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { LoginResponse } from './login-response.model';
-
+import { LoginService } from '../services/login.service';
+import { FormControl,Validators,FormGroup } from '@angular/forms';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -17,45 +18,41 @@ export class LoginComponent implements OnInit {
   appStore:string='assets/images/app-store.svg';
   playStore:string='assets/images/google-play.svg';
 
-  
-  user_id:string='';
-  password:string='';
+  //Reactive form-group
+  loginForm=new FormGroup(
+    {
+      user_id:new FormControl('',Validators.required),
+      password:new FormControl('',Validators.required)
+    }
+  );
+
   wrongPassword:Boolean=false;
   
 
-  constructor(private http:HttpClient,private router:Router) { }
+  constructor(private http:HttpClient,private router:Router,public loginService:LoginService) { }
 
   ngOnInit(): void {
   }
 
   //authenticate the credentials by posting data to the server
-  login()
+ login()
   {
       const credential={
-        user_id:this.user_id,
-        password:this.password
+        user_id:this.loginForm.get('user_id')?.value,
+        password:this.loginForm.get('password')?.value
       };
-      console.log(credential);
-      this.http.post<LoginResponse>("http://localhost:3000/login",credential).subscribe
-      (
-        (responseData)=>{
-
-          //route to dashboard page if the credentials are correct
-          if(responseData.code == '1')
-          {
-            this.router.navigate(['dashboard']);
-          }
-          //show the error message if the credentials are wrong
-          else
-          {
-            this.wrongPassword=!this.wrongPassword;
-          }
-
-        }
-      );
-       
+      
+      this.loginService.login(credential);    
   }
 
+  get user_id():any
+  {
+      return this.loginForm.get('user_id');
+  }
+  get password():any
+  {
+      return  this.loginForm.get('password');
+  }
   check()
   {
     alert('Success');

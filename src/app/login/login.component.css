@@ -24,6 +24,8 @@
 .flex-left-item2 {
   height: 65%;
   flex-direction: column;
+  display: flex;
+  
 }
 @media (max-width: 800px) {
   .flex-left,
@@ -48,6 +50,9 @@ mat-card {
   box-shadow: 0 5px 5px -3px rgb(0 0 0 / 20%), 0 8px 10px 1px rgb(0 0 0 / 14%),
     0 3px 14px 2px rgb(0 0 0 / 12%) !important;
   border-radius: 10px;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
 }
 .login-title {
   font-size: 18px;
@@ -151,4 +156,16 @@ a {
 .store-button :hover {
   border: 2px solid #42ad4e;
   border-radius: 8px;
+}
+.error{
+  color: red;
+  font-size: 15px;
+  align-self: center;
+}
+
+form
+{
+  display: flex;
+  flex-direction: column;
+  
 }

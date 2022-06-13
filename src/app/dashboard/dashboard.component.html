@@ -1,27 +1,71 @@
 <mat-toolbar class="header">
-    <span>My Application</span>
+    <span class="header-title">Dashboard</span>
+    <div class="header-content">
+        <a class="new-button" (click)="requestLoan()" mat-raised-button>New</a>
+     </div>
 </mat-toolbar>
 
-<div class="container">
-    <div class="left">
-    <nav class="navbar navbar-default navbar-fixed-side">
-      <img [src]='sidf_menu_logo' height="48px">
-      <ul class="nav flex-column">
-        <li routerLinkActive="active"><a routerLink="/customer/dashboard"><mat-icon>dashboard</mat-icon></a></li>
-        <li routerLinkActive="active"><a routerLink="/customer/profile"><mat-icon>perm_identity</mat-icon>Profile</a></li>
-        <li routerLinkActive="active"><a routerLink="/customer/inquiry"><mat-icon>question_answer</mat-icon>Inquiry</a></li>
-        <li routerLinkActive="active"><a routerLink="/customer/sales"><mat-icon>request_page</mat-icon>Sales Order</a></li>
-        <li routerLinkActive="active"><a routerLink="/customer/delivery"><mat-icon>departure_board</mat-icon>Delivery</a></li>
-        <li routerLinkActive="active"><a routerLink="/customer/finance"><mat-icon>attach_money</mat-icon>Financial Sheet</a></li>
-        <li routerLinkActive="active"><a routerLink="/customer/upload"><mat-icon>cloud_upload</mat-icon>Master Data Upload</a></li>
-      </ul>
-    </nav>
-    </div>
-    <div class="right">
-        <router-outlet></router-outlet>
-    </div>
-</div>
+<mat-sidenav-container class="example-container" >
 
+    <mat-sidenav class="side-nav"mode="side" opened>
+        <mat-list>
+
+            <a mat-list-item routerLink='/first' class="list-item">
+                <img [src]="sidf_menu_logo">
+            </a>
+
+            <mat-list-item class="list-item">
+                <span>
+                <mat-icon>
+                    dashboard
+                </mat-icon>
+                <p>Dashboard</p>
+            </span>
+            </mat-list-item>
+
+            <mat-list-item class="list-item">
+                <span>
+                <mat-icon>
+                    flag
+                </mat-icon>
+                <p>My Cases</p>
+            </span>
+            </mat-list-item>
+
+            <mat-list-item class="list-item">
+                <span>
+                <mat-icon>
+                    mail
+                </mat-icon>
+                <p>Inbox</p>
+            </span>
+            </mat-list-item>
+
+            <mat-list-item class="list-item">
+                <span>
+                <mat-icon>
+                    request_quote
+                </mat-icon>
+                <p>Projects</p>
+            </span>
+            </mat-list-item>
+
+            <mat-list-item class="list-item">
+                <span>
+                <mat-icon>
+                    call
+                </mat-icon>
+                <p>IVR Management</p>
+            </span>
+            </mat-list-item>
+        </mat-list>
+    </mat-sidenav>
+
+
+    <mat-sidenav-content class="content">
+        <router-outlet></router-outlet>
+    </mat-sidenav-content>
+</mat-sidenav-container>
   
 
   

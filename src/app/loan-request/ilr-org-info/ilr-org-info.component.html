@@ -1,0 +1,120 @@
+<mat-accordion>
+  <mat-expansion-panel>
+    <mat-expansion-panel-header> License Details </mat-expansion-panel-header>
+    <mat-label style="color: #42ad4e">
+      Select the current organization registration type in Saudi Arabia
+      <div class="column-flex">
+        <div class="row-flex">
+          <mat-card [ngClass]="{ enabled: mocSelected }" (click)="toggleMOC()">
+            <div class="row-flex">
+              <mat-icon>check_circle</mat-icon>
+              <div class="column-flex">
+                <p>Minisitry of Commerce</p>
+                <p>Main Commercial Registration Number</p>
+              </div>
+            </div>
+          </mat-card>
+
+          <mat-card
+            [ngClass]="{ enabled: misaSelected }"
+            (click)="toggleMISA()"
+          >
+            <div class="row-flex">
+              <mat-icon>check_circle</mat-icon>
+
+              <div class="column-flex">
+                <p>Ministry of Investment Saudi Arabia</p>
+                <p>(MISA) Business License Number</p>
+              </div>
+            </div>
+          </mat-card>
+        </div>
+        <div *ngIf="mocSelected" class="row-flex">
+          <mat-form-field appearance="outline">
+            <mat-label>Main Commercial Registration Number</mat-label>
+            <input matInput placeholder="Eg. 176672672637" />
+          </mat-form-field>
+          <mat-form-field appearance="outline">
+            <mat-label>Commercial Registration Issue Date</mat-label>
+            <input matInput placeholder="yyyy/MM/dd" />
+          </mat-form-field>
+        </div>
+        <div *ngIf="misaSelected" class="row-flex">
+          <mat-form-field appearance="outline">
+            <mat-label>Saudi Arabia Business License Number</mat-label>
+            <input matInput placeholder="Eg. 176672672637" />
+          </mat-form-field>
+          <mat-form-field appearance="outline">
+            <mat-label>MISA License Issue Date</mat-label>
+            <input matInput placeholder="yyyy/MM/dd" />
+          </mat-form-field>
+        </div>
+        <p>Do You Have Industrial License?</p>
+        <mat-slide-toggle
+          [(ngModel)]="hasIndustrialLicense"
+          [disabled]="misaSelected"
+          >No</mat-slide-toggle
+        >
+        <div *ngIf="hasIndustrialLicense">
+          <div class="column-flex">
+            <div class="row-flex">
+              <mat-card (click)="hasInitialLicense()" [ngClass]="{ enabled: initialLicenseSelected }">
+                <div class="row-flex">
+                  <mat-icon>check_circle</mat-icon>
+                  Initial Industrial License
+                </div>
+              </mat-card>
+              <mat-card (click)="hasFinalLicense()" [ngClass]="{ enabled: finalLicenseSelected }">
+                <div class="row-flex">
+                  <mat-icon>check_circle</mat-icon>
+                  Final Industrial License
+                </div>
+              </mat-card>
+            </div>
+            <div *ngIf="initialLicenseSelected" class="row-flex">
+                <mat-form-field appearance="outline">
+                    <mat-label>Initial Industrial License Number</mat-label>
+                    <input matInput placeholder="Eg. 176672672637" />
+                  </mat-form-field>
+                  <mat-form-field appearance="outline">
+                    <mat-label>Initial Industrial License Issue Date</mat-label>
+                    <input [(ngModel)]="date" matInput [matDatepicker]="picker" placeholder="dd/mm/yyyy">
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                </mat-form-field>
+            </div>
+            <div *ngIf="finalLicenseSelected" class="row-flex">
+                <mat-form-field appearance="outline">
+                    <mat-label>Final Industrial License Number</mat-label>
+                    <input matInput placeholder="Eg. 176672672637" />
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label>Final Industrial License Issue Date</mat-label>
+                    <input matInput [matDatepicker]="picker" placeholder="dd/mm/yyyy">
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                </mat-form-field>
+                
+                  
+                  
+            </div>
+          </div>
+        </div>
+      </div>
+    </mat-label>
+  </mat-expansion-panel>
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      Delegation of Authority Information
+    </mat-expansion-panel-header>
+    content2
+  </mat-expansion-panel>
+  <mat-expansion-panel>
+    <mat-expansion-panel-header> MISA Information </mat-expansion-panel-header>
+    content
+  </mat-expansion-panel>
+  <mat-expansion-panel>
+    <mat-expansion-panel-header> Other Documents </mat-expansion-panel-header>
+    content
+  </mat-expansion-panel>
+</mat-accordion>
