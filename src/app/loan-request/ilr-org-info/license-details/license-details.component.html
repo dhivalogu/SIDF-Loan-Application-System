@@ -1,0 +1,197 @@
+<mat-label style="color: #42ad4e">
+  Select the current organization registration type in Saudi Arabia
+  <div class="column-flex">
+    <div class="row-flex">
+      <mat-card
+        class="selectable-card"
+        [ngClass]="{ enabled: mocSelected }"
+        (click)="toggleMOC()"
+      >
+        <div class="row-flex">
+          <mat-icon>check_circle</mat-icon>
+          <div class="column-flex">
+            <p>Minisitry of Commerce</p>
+            <p>Main Commercial Registration Number</p>
+          </div>
+        </div>
+      </mat-card>
+
+      <mat-card
+        class="selectable-card"
+        [ngClass]="{ enabled: misaSelected }"
+        (click)="toggleMISA()"
+      >
+        <div class="row-flex">
+          <mat-icon>check_circle</mat-icon>
+
+          <div class="column-flex">
+            <p>Ministry of Investment Saudi Arabia</p>
+            <p>(MISA) Business License Number</p>
+          </div>
+        </div>
+      </mat-card>
+    </div>
+    <div *ngIf="mocSelected" class="row-flex">
+      <form [formGroup]="commercialLicenseGroup">
+        <mat-form-field appearance="outline">
+          <mat-label>Main Commercial Registration Number</mat-label>
+          <input
+            matInput
+            placeholder="Eg. 176672672637"
+            formControlName="crNumber"
+          />
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>Commercial Registration Issue Date</mat-label>
+          <input
+            matInput
+            [matDatepicker]="datepicker"
+            placeholder="yyyy/MM/dd"
+            formControlName="crDate"
+          />
+          <mat-datepicker-toggle
+            matSuffix
+            [for]="datepicker"
+          ></mat-datepicker-toggle>
+          <mat-datepicker #datepicker>
+            <mat-datepicker-actions>
+              <button mat-button matDatepickerCancel>Cancel</button>
+              <button mat-raised-button color="primary" matDatepickerApply>
+                Apply
+              </button>
+            </mat-datepicker-actions>
+          </mat-datepicker>
+        </mat-form-field>
+      </form>
+    </div>
+    <div *ngIf="misaSelected" class="row-flex">
+      <form [formGroup]="misaLicenseFg">
+        <mat-form-field appearance="outline">
+          <mat-label>Saudi Arabia Business License Number</mat-label>
+          <input
+            matInput
+            placeholder="Eg. 176672672637"
+            formControlName="misaLicenseNo"
+          />
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>MISA License Issue Date</mat-label>
+          <input
+            matInput
+            [matDatepicker]="datepicker"
+            placeholder="yyyy/MM/dd"
+            formControlName="misaLicenseDate"
+          />
+          <mat-datepicker-toggle
+            matSuffix
+            [for]="datepicker"
+          ></mat-datepicker-toggle>
+          <mat-datepicker #datepicker>
+            <mat-datepicker-actions>
+              <button mat-button matDatepickerCancel>Cancel</button>
+              <button mat-raised-button color="primary" matDatepickerApply>
+                Apply
+              </button>
+            </mat-datepicker-actions>
+          </mat-datepicker>
+        </mat-form-field>
+      </form>
+    </div>
+    <p>Do You Have Industrial License?</p>
+    <mat-slide-toggle
+      [(ngModel)]="hasIndustrialLicense"
+      [disabled]="misaSelected"
+      (change)="check()"
+      >No</mat-slide-toggle
+    >
+    <div *ngIf="hasIndustrialLicense">
+      <div class="column-flex">
+        <div class="row-flex">
+          <mat-card
+            class="selectable-card"
+            (click)="hasInitialLicense()"
+            [ngClass]="{ enabled: initialLicenseSelected }"
+          >
+            <div class="row-flex">
+              <mat-icon>check_circle</mat-icon>
+              Initial Industrial License
+            </div>
+          </mat-card>
+          <mat-card
+            class="selectable-card"
+            (click)="hasFinalLicense()"
+            [ngClass]="{ enabled: finalLicenseSelected }"
+          >
+            <div class="row-flex">
+              <mat-icon>check_circle</mat-icon>
+              Final Industrial License
+            </div>
+          </mat-card>
+        </div>
+        <div *ngIf="initialLicenseSelected" class="row-flex">
+          <form [formGroup]="indInitLicenseFg">
+            <mat-form-field appearance="outline">
+              <mat-label>Initial Industrial License Number</mat-label>
+              <input
+                matInput
+                placeholder="Eg. 176672672637"
+                formControlName="initialLicenseNo"
+              />
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+              <mat-label>Initial Industrial License Issue Date</mat-label>
+              <input
+                matInput
+                [matDatepicker]="picker"
+                placeholder="dd/mm/yyyy"
+                formControlName="initialLicenseDate"
+              />
+              <mat-datepicker-toggle
+                matSuffix
+                [for]="picker"
+              ></mat-datepicker-toggle>
+              <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+          </form>
+        </div>
+        <div *ngIf="finalLicenseSelected" class="row-flex">
+          <form [formGroup]="indFinalLicenseFg">
+            <mat-form-field appearance="outline">
+              <mat-label>Final Industrial License Number</mat-label>
+              <input
+                matInput
+                placeholder="Eg. 176672672637"
+                formControlName="finalLicenseNo"
+              />
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+              <mat-label>MISA Business License Issue Date</mat-label>
+              <input
+                matInput
+                [matDatepicker]="picker"
+                placeholder="dd/mm/yyyy"
+                formControlName="finalLicenseDate"
+              />
+              <mat-datepicker-toggle
+                matSuffix
+                [for]="picker"
+              ></mat-datepicker-toggle>
+              <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="row-flex">
+      <button
+        (click)="saveLicenseDetails()"
+        type="submit"
+        [disabled]="!saveButtonValidation()"
+        mat-raised-button
+        color="green"
+      >
+        Save details
+      </button>
+    </div>
+  </div>
+</mat-label>

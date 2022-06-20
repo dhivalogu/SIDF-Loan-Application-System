@@ -82,7 +82,8 @@ button {
 }
 a {
   text-decoration: underline;
-  color: #98989a;
+  color: #000000;
+  cursor: pointer;
 }
 .login-note {
   font-size: x-small;

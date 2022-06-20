@@ -1,0 +1,45 @@
+.card-details {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+.selectable-card {
+  margin: 5px;
+  padding: 5px;
+  cursor: pointer;
+  width: 40%;
+}
+
+.mat-form-field {
+  margin: 5px;
+}
+
+.mat-icon {
+  margin: 5px;
+}
+.mat-card::selection {
+  background-color: black;
+}
+
+.disabled {
+  color: #888888;
+}
+
+.enabled {
+  background-color: #42ad4e;
+  color: white;
+}
+
+.enabled,
+.mat-icon {
+  color: aliceblue;
+}
+.mat-form-field {
+  width: 40%;
+}
+
+.mat-raised-button {
+  background-color: #42ad4e;
+  color: aliceblue;
+  margin: 5px;
+}

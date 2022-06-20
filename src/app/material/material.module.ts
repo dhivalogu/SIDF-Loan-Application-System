@@ -13,6 +13,8 @@ import {MatExpansionModule} from '@angular/material/expansion';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatNativeDateModule } from '@angular/material/core';
+import {MatTableModule} from '@angular/material/table'
+import { MatSelectModule } from '@angular/material/select';
 const MaterialComponents = [
   MatCardModule,
   MatInputModule,
@@ -27,7 +29,9 @@ const MaterialComponents = [
   MatExpansionModule,
   MatSlideToggleModule,
   MatDatepickerModule,
-  MatNativeDateModule
+  MatNativeDateModule,
+  MatTableModule,
+  MatSelectModule
 ];
 
 @NgModule({

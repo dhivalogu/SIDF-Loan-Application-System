@@ -20,10 +20,16 @@ export class LoginService
               authSuccess=true;
               this.router.navigate(['dashboard']);
               console.log(authSuccess);
+              
+          }
+          else
+          {
+            alert("Enter valid User ID/Password")
           }
 
         }
       );
-      return authSuccess;
+
+      
     }
 }

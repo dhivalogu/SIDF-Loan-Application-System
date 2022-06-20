@@ -4,6 +4,7 @@ const app = express();
 const mongoose = require("mongoose");
 const credential = require("./models/credential");
 app.use(bodyParser.json());
+
 mongoose
   .connect(
     "mongodb+srv://dbadmin:dbadmindhiva@cluster0.uaggm.mongodb.net/sidf?retryWrites=true&w=majority"
@@ -11,7 +12,10 @@ mongoose
   .then(() => {
     console.log("Connected Successfully");
   });
-const Credential=require('./models/credential')
+
+const Credential=require('./models/credential');
+const crInfo=require('./models/crLicense');
+
 app.use((req, res, next) => {
     res.setHeader("Access-Control-Allow-Origin", "*");
     res.setHeader(
@@ -24,6 +28,9 @@ app.use((req, res, next) => {
     );
     next();
   });
+
+
+
 app.post('/login',(req,res,next)=>
 {
     console.log(req.body.user_id);
@@ -40,5 +47,14 @@ app.post('/login',(req,res,next)=>
         }
     })
     
+})
+
+app.post('/getLicenseInfo',(req,res,next)=>{
+
+ crInfo.find((err,docs)=>{
+  res.json(docs);
+ })
+ 
+
 })
 module.exports=app;

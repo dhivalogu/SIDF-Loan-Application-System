@@ -12,13 +12,24 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { LoginService } from './services/login.service';
 import { LoanRequestComponent } from './loan-request/loan-request.component';
 import { IlrOrgInfoComponent } from './loan-request/ilr-org-info/ilr-org-info.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgxSpinnerModule } from "ngx-spinner";
+import { LicenseDetailsComponent } from './loan-request/ilr-org-info/license-details/license-details.component';
+import { DoaInfoComponent } from './loan-request/ilr-org-info/doa-info/doa-info.component';
+import { CrInfoComponent } from './loan-request/ilr-org-info/cr-info/cr-info.component';
+import { OtherDocsComponent } from './loan-request/ilr-org-info/other-docs/other-docs.component';
+import { ILRService } from './services/ilr.service';
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     DashboardComponent,
     LoanRequestComponent,
-    IlrOrgInfoComponent
+    IlrOrgInfoComponent,
+    LicenseDetailsComponent,
+    DoaInfoComponent,
+    CrInfoComponent,
+    OtherDocsComponent
   ],
   imports: [
     BrowserModule,
@@ -27,9 +38,11 @@ import { IlrOrgInfoComponent } from './loan-request/ilr-org-info/ilr-org-info.co
     MaterialModule,
     FormsModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgbModule,
+    NgxSpinnerModule
   ],
-  providers: [LoginService],
-  bootstrap: [AppComponent]
+  providers: [LoginService,ILRService],
+  bootstrap: [AppComponent],
 })
 export class AppModule { }
