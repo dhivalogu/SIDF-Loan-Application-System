@@ -40,5 +40,36 @@
       "idType": "GCC",
       "crNo": ""
     }
+  ],
+  "organizations": [
+    {
+      "name_ar": "مام المدينة الصناعية الثانية شارع",
+
+      "name_en": "zs",
+
+      "crNo": "76891234",
+
+      "crIssueCity": "",
+
+      "crIssueDate": "1431-12-22",
+
+      "crIssueEnd": "1447-08-10",
+
+      "capital": "66000.0",
+
+      "legalType": "",
+
+      "unitNo": "112",
+
+      "addno": "23",
+
+      "buildNo": "342",
+
+      "address": "الدمام المدينة الصناعية الثانية شارع الامير نواف",
+
+      "zip": "11111",
+
+      "city": ""
+    }
   ]
 }

@@ -22,11 +22,24 @@ form {
   align-items: center;
   align-content: center;
   margin: 2px;
+  flex-wrap: wrap;
 }
 .column-flex {
   display: flex;
   flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  justify-items: center;
   margin: 2px;
+  flex-wrap: wrap;
+}
+
+.heading {
+  font-weight: 500;
+  color: #42ad4e;
+  font-size: 16px;
+  padding: 10px;
 }
 
 

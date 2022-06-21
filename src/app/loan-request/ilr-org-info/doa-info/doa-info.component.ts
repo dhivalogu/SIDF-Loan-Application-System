@@ -43,7 +43,6 @@ export class DoaInfoComponent implements OnInit {
       mail:''
       
     };
-    console.log("hi");
     this.ILRService.addAuthorizedPersonsList(AuthorityData);
     this.refreshData();
     delay(5000);

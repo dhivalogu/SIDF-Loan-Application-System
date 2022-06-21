@@ -1,1 +1,30 @@
-<p>cr-info works!</p>
+<div clas="column-flex" class="heading">
+    <mat-label>Review the official Commercial Registration(CR) Information</mat-label>
+    <mat-card>
+        <div class="row-flex">
+            <p style="width:90%"></p>
+            <button mat-stroked-button>Edit</button>
+        </div>
+        <mat-divider></mat-divider>
+        <div class="row-flex">
+            <div class="data-label">
+                <div class="column-flex">
+                <mat-label>Organization Name In Arabic</mat-label>
+                <mat-label>{{orgData.name_ar}} </mat-label>
+                </div>
+            </div>
+            <div class="data-label">
+                <div class="column-flex">
+                <mat-label>Organization Name In English</mat-label>
+                <mat-label>{{orgData.name_en}} </mat-label>
+                </div>
+            </div>
+            <div class="data-label">
+                <div class="column-flex">
+                <mat-label>Organization Name In English</mat-label>
+                <mat-label>{{orgData.name_en}} </mat-label>
+                </div>
+            </div>
+        </div>
+    </mat-card>
+</div>
