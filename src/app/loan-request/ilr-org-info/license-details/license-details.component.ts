@@ -11,11 +11,11 @@ export class LicenseDetailsComponent implements OnInit {
   mocSelected=true;
   misaSelected=false;
   hasIndustrialLicense=false;
-  initialLicenseSelected=true;
+  initialLicenseSelected=true; 
   finalLicenseSelected=false;
   licenseDetailsCompleted=false;
   constructor(private formBuilder:FormBuilder) { }
-
+ 
   ngOnInit(): void {
     this.commercialLicenseGroup.pristine;
   }

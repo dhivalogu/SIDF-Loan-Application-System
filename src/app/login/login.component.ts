@@ -43,7 +43,7 @@ export class LoginComponent implements OnInit {
         user_id:this.loginForm.get('user_id')?.value,
         password:this.loginForm.get('password')?.value
       };
-      this.loginService.login(credential); 
+      console.log(this.loginService.login(credential)); 
       this.spinner.hide();   
   }
 

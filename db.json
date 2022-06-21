@@ -1,0 +1,44 @@
+{
+  "credentials": [
+    {
+      "user_id": "SIDF",
+      "password": "100"
+    }
+  ],
+  "authorised_persons": [
+    {
+      "crNo": "76891234",
+      "name": "Dhiva",
+      "mail": "dhivalogu@gmail.com",
+      "mobile": "8825650521",
+      "idType": "GCC",
+      "id": "1000000000"
+    },
+    {
+      "crNo": "76891234",
+      "name": "Shiva",
+      "mail": "shivarat@gmail.com",
+      "mobile": "9815850521",
+      "idType": "GCC",
+      "id": "1000000001"
+    },
+    {
+      "id": "1000000002",
+      "name": "Rev",
+      "mail": "rev@gmail.com",
+      "mobile": "7654332109",
+      "idType": "GCC",
+      "crNo": ""
+    }
+  ],
+  "person_id": [
+    {
+      "id": "1000000002",
+      "name": "Rev",
+      "mail": "rev@gmail.com",
+      "mobile": "7654332109",
+      "idType": "GCC",
+      "crNo": ""
+    }
+  ]
+}

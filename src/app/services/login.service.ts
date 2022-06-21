@@ -7,11 +7,14 @@ export class LoginService
 {
     constructor(private http:HttpClient,private router:Router){}
 
-    login(loginData:Object)
+    login(loginData:any)
     {
-        var authSuccess:Boolean=false;
+        
+        let user;
+        var result:any | undefined ;
+        var authSuccess=false;
         console.log(loginData);
-        this.http.post<LoginResponse>("http://localhost:3000/login",loginData).subscribe
+        this.http.post<LoginResponse>("http://localhost:3200/login",loginData).subscribe
       (
         (responseData)=>{
           console.log(responseData);
@@ -30,6 +33,6 @@ export class LoginService
         }
       );
 
-      
     }
+    
 }
