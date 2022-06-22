@@ -2,9 +2,10 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { LoginResponse } from '../login/login-response.model';
 import { Router } from '@angular/router';
+import { MatSnackBar } from '@angular/material/snack-bar';
 @Injectable()
 export class LoginService {
-  constructor(private http: HttpClient, private router: Router) {}
+  constructor(private http: HttpClient, private router: Router,private SnackBar:MatSnackBar) {}
 
   login(loginData: any) {
     this.http
@@ -14,7 +15,7 @@ export class LoginService {
         if (responseData.code == '1') {
           this.router.navigate(['dashboard']);
         } else {
-          alert('Enter valid User ID/Password');
+          this.SnackBar.open("Enter Valid User ID/Password","Retry")
         }
       });
   }

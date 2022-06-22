@@ -1,0 +1,9 @@
+.mat-action-row
+{
+    justify-content: flex-start;
+}
+.mat-raised-button
+{
+    background-color: #42ad4e;
+    color:white;
+}

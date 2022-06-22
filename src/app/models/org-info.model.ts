@@ -16,5 +16,7 @@ export interface OrgInfo
     city:string,
     mobile:string,
     phone:string,
-    
+    mail:string,
+    fax:string
+
 }

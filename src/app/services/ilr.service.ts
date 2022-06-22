@@ -2,12 +2,13 @@ import { HttpClient } from '@angular/common/http';
 import { EventEmitter, Injectable } from '@angular/core';
 import { AuthorityInformation } from '../models/authority-info.model';
 import { OrgInfo } from '../models/org-info.model';
+import { NgxSpinnerService } from 'ngx-spinner';
 @Injectable()
 export class ILRService {
   orgData: OrgInfo = {} as OrgInfo;
   licenseDetailsSaved = new EventEmitter();
   authorityAdded = new EventEmitter();
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient,public spinner:NgxSpinnerService) {}
 
   verifyLicenseDetails() {
     return this.http.get('http://localhost:3000/licenseDetails');

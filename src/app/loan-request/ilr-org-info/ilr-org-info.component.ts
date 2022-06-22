@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { MatNativeDateModule } from '@angular/material/core';
 import { Injectable } from '@angular/core';
+import { ViewChild } from '@angular/core';
+import {MatAccordion} from '@angular/material/expansion'
 import {
   NgbDateStruct,
   NgbCalendar,
@@ -22,7 +24,10 @@ import { Subscription } from 'rxjs';
   styleUrls: ['./ilr-org-info.component.css'],
 })
 export class IlrOrgInfoComponent implements OnInit {
+
+  @ViewChild(MatAccordion) myAcc!: MatAccordion;
   DAICompleted = false;
+  step:number=0;
   mocInfoCompleted = false;
   misaInfoCompleted = false;
   licenseSub: Subscription = this.ILRService.licenseDetailsSaved.subscribe(
@@ -38,4 +43,13 @@ export class IlrOrgInfoComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {}
+
+  changeStep(step:number)
+  {
+    this.step=step;
+    console.log(step);
+    console.log(this.myAcc.togglePosition);
+  }
 }
+  
+

@@ -1,20 +1,34 @@
 <mat-accordion>
-  <mat-expansion-panel>
+  <mat-expansion-panel (afterExpand)="step=0" [expanded]="step==0">
     <mat-expansion-panel-header> License Details </mat-expansion-panel-header>
     <app-license-details></app-license-details>
+    <mat-action-row *ngIf="licenseInfoCompleted">
+      <button mat-raised-button (click)="changeStep(1)">Next</button>
+    </mat-action-row>
   </mat-expansion-panel>
-  <mat-expansion-panel [disabled]="!licenseInfoCompleted">
+  <mat-expansion-panel  (afterExpand)="step=1" [disabled]="!licenseInfoCompleted" [expanded]="step==1">
     <mat-expansion-panel-header>
       Delegation of Authority Information
     </mat-expansion-panel-header>
     <app-doa-info></app-doa-info>
+    <mat-action-row>
+      <button mat-raised-button (click)="changeStep(0)">Previous</button>
+      <button mat-raised-button (click)="changeStep(2)">Next</button>
+    </mat-action-row>
   </mat-expansion-panel>
-  <mat-expansion-panel [disabled]="!licenseInfoCompleted">
+  <mat-expansion-panel  (afterExpand)="step=2"  [disabled]="!licenseInfoCompleted" [expanded]="step==2">
     <mat-expansion-panel-header> Comercial Registration Information </mat-expansion-panel-header>
     <app-cr-info></app-cr-info>
+    <mat-action-row>
+      <button mat-raised-button (click)="changeStep(1)">Previous</button>
+      <button mat-raised-button (click)="changeStep(3)">Next</button>
+    </mat-action-row>
   </mat-expansion-panel>
-  <mat-expansion-panel [disabled]="!licenseInfoCompleted">
+  <mat-expansion-panel (afterExpand)="step=3" [disabled]="!licenseInfoCompleted" [expanded]="step==3">
     <mat-expansion-panel-header> Other Documents </mat-expansion-panel-header>
-    content
+    content 
+    <mat-action-row>
+      <button mat-raised-button color="primary" (click)="changeStep(2)">Previous</button>
+    </mat-action-row>
   </mat-expansion-panel>
 </mat-accordion>
