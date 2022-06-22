@@ -3,13 +3,13 @@
     <mat-expansion-panel-header> License Details </mat-expansion-panel-header>
     <app-license-details></app-license-details>
   </mat-expansion-panel>
-  <mat-expansion-panel>
+  <mat-expansion-panel [disabled]="!licenseInfoCompleted">
     <mat-expansion-panel-header>
       Delegation of Authority Information
     </mat-expansion-panel-header>
     <app-doa-info></app-doa-info>
   </mat-expansion-panel>
-  <mat-expansion-panel>
+  <mat-expansion-panel [disabled]="!licenseInfoCompleted">
     <mat-expansion-panel-header> Comercial Registration Information </mat-expansion-panel-header>
     <app-cr-info></app-cr-info>
   </mat-expansion-panel>

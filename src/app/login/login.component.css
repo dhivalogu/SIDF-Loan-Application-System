@@ -170,3 +170,11 @@ form
   flex-direction: column;
   
 }
+.mat-form-field
+{
+  margin:5px;
+}
+button
+{
+  margin: 15px;
+}

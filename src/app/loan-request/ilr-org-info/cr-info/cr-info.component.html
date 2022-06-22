@@ -1,30 +1,121 @@
 <div clas="column-flex" class="heading">
-    <mat-label>Review the official Commercial Registration(CR) Information</mat-label>
-    <mat-card>
-        <div class="row-flex">
-            <p style="width:90%"></p>
-            <button mat-stroked-button>Edit</button>
+  <mat-label
+    >Review the official Commercial Registration(CR) Information</mat-label
+  >
+  <mat-card>
+    <div class="row-flex">
+      <p style="width: 90%"></p>
+      <button mat-stroked-button>Edit</button>
+    </div>
+    <mat-divider></mat-divider>
+    <div class="row-flex">
+      <div class="data-label">
+        <div class="column-flex">
+          <mat-label class="label">Organization Name In Arabic</mat-label>
+          <mat-label class="label-data">{{ orgData.name_ar }} </mat-label>
         </div>
-        <mat-divider></mat-divider>
-        <div class="row-flex">
-            <div class="data-label">
-                <div class="column-flex">
-                <mat-label>Organization Name In Arabic</mat-label>
-                <mat-label>{{orgData.name_ar}} </mat-label>
-                </div>
-            </div>
-            <div class="data-label">
-                <div class="column-flex">
-                <mat-label>Organization Name In English</mat-label>
-                <mat-label>{{orgData.name_en}} </mat-label>
-                </div>
-            </div>
-            <div class="data-label">
-                <div class="column-flex">
-                <mat-label>Organization Name In English</mat-label>
-                <mat-label>{{orgData.name_en}} </mat-label>
-                </div>
-            </div>
+      </div>
+      <div class="data-label">
+        <div class="column-flex">
+          <mat-label class="label">Organization Name In English</mat-label>
+          <mat-label class="label-data">{{ orgData.name_en }} </mat-label>
         </div>
-    </mat-card>
+      </div>
+      <div class="data-label">
+        <div class="column-flex">
+          <mat-label class="label">Organization CR Number</mat-label>
+          <mat-label class="label-data">{{ orgData.crNo }} </mat-label>
+        </div>
+      </div>
+      <div class="data-label">
+        <div class="column-flex">
+          <mat-label class="label">CR Issue City</mat-label>
+          <mat-label class="label-data">{{ orgData.crIssueCity }} </mat-label>
+        </div>
+      </div>
+      <div class="data-label">
+        <div class="column-flex">
+          <mat-label class="label">CR Issue Date</mat-label>
+          <mat-label class="label-data">{{ orgData.crIssueDate }} </mat-label>
+        </div>
+      </div>
+      <div class="data-label">
+        <div class="column-flex">
+          <mat-label class="label">CR Expiry Date</mat-label>
+          <mat-label class="label-data">{{ orgData.crIssueEnd }} </mat-label>
+        </div>
+      </div>
+      <div class="data-label">
+        <div class="column-flex">
+          <mat-label class="label">Organization Paid In Capital</mat-label>
+          <mat-label class="label-data">{{ orgData.capital }} </mat-label>
+        </div>
+      </div>
+      <div class="data-label">
+        <div class="column-flex">
+          <mat-label class="label">Organization Legal Type</mat-label>
+          <mat-label class="label-data">{{ orgData.legalType }} </mat-label>
+        </div>
+      </div>
+      <div class="data-label">
+        <div class="column-flex">
+          <mat-label class="label">Organization Unit Number</mat-label>
+          <mat-label class="label-data">{{ orgData.unitNo }} </mat-label>
+        </div>
+      </div>
+      <div class="data-label">
+        <div class="column-flex">
+          <mat-label class="label">Additional Number</mat-label>
+          <mat-label class="label-data">{{ orgData.addno }} </mat-label>
+        </div>
+      </div>
+
+      <div class="data-label">
+        <div class="column-flex">
+          <mat-label class="label">Organization Building Number</mat-label>
+          <mat-label class="label-data">{{ orgData.buildNo }} </mat-label>
+        </div>
+      </div>
+
+      <div class="data-label">
+        <div class="column-flex">
+          <mat-label class="label">Organization Address</mat-label>
+          <mat-label class="label-data">{{ orgData.address }} </mat-label>
+        </div>
+      </div>
+
+      <div class="data-label">
+        <div class="column-flex">
+          <mat-label class="label">ZIP Code</mat-label>
+          <mat-label class="label-data">{{ orgData.zip }} </mat-label>
+        </div>
+      </div>
+
+      <div class="data-label">
+        <div class="column-flex">
+          <mat-label class="label">Organization City</mat-label>
+          <mat-label class="label-data">{{ orgData.city }} </mat-label>
+        </div>
+      </div>
+    </div>
+  </mat-card>
+
+  <mat-label
+    >Please review the main official organization contact Information</mat-label
+  >
+  <mat-card>
+    <div class="row-flex">
+      <p style="width: 90%"></p>
+      <button mat-stroked-button>Edit</button>
+    </div>
+    <mat-divider></mat-divider>
+    <div class="row-flex">
+      <div class="data-label">
+        <div class="column-flex">
+          <mat-label class="label">Organization Phone Number</mat-label>
+          <mat-label class="label-data">{{ orgData.phone }} </mat-label>
+        </div>
+      </div>
+    </div>
+  </mat-card>
 </div>

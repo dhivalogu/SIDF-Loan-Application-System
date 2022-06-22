@@ -5,15 +5,22 @@
         Please provide the details of the authorised person(s) who are
         representing the loan request on behalf of the organization
       </p>
-      <p>hi</p>
-      <button mat-stroked-button (click)="toggleAuthorisedPersonForm()">Add Authorised Person</button>
+      <button mat-stroked-button (click)="toggleAuthorisedPersonForm()">
+        Add Authorised Person
+      </button>
     </div>
     <mat-card *ngIf="AuthorisedPersonForm" class="add-authority-person">
       <div class="row-flex">
         <p class="authority-heading">
           Please enter details of the authorised person
         </p>
-        <button style="align-self: right" (click)="toggleAuthorisedPersonForm()" mat-stroked-button>Cancel</button>
+        <button
+          style="align-self: right"
+          (click)="toggleAuthorisedPersonForm()"
+          mat-stroked-button
+        >
+          Cancel
+        </button>
       </div>
       <form [formGroup]="authorisedPersonFB">
         <div class="row-flex">
@@ -27,18 +34,32 @@
             </mat-select>
           </mat-form-field>
           <mat-form-field appearance="outline">
-            <input matInput placeholder="Identification Number" formControlName="id"/>
+            <input
+              matInput
+              placeholder="Identification Number"
+              formControlName="id"
+            />
           </mat-form-field>
         </div>
       </form>
       <div class="row-flex">
         <p class="authority-heading"></p>
-        <button [disabled]="!authorisedPersonFB.valid" style="align-self: right" mat-stroked-button (click)="addAuthorizedPerson()">
+        <button
+          [disabled]="!authorisedPersonFB.valid"
+          style="align-self: right"
+          mat-stroked-button
+          (click)="addAuthorizedPerson()"
+        >
           Add Authorised Person
         </button>
       </div>
     </mat-card>
-    <table  #myTable mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+    <table
+      #myTable
+      mat-table
+      [dataSource]="dataSource"
+      class="mat-elevation-z8"
+    >
       <ng-container matColumnDef="name">
         <th mat-header-cell *matHeaderCellDef>Authorised Person Name</th>
         <td mat-cell *matCellDef="let element">{{ element.name }}</td>

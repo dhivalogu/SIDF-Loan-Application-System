@@ -1,4 +1,25 @@
 .data-label
 {
-    width: 30%;
+    width: 33%;
+}
+.label 
+{
+    margin: 5px;
+    padding:5px;
+    color:dimgray;
+    font-weight: 300;
+}
+.label-data
+{
+    margin: 5px;
+    padding:5px;
+    
+}
+.row-flex
+{
+    flex-wrap: wrap;
+}
+.column-flex
+{
+    margin:10px;
 }

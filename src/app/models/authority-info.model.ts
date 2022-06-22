@@ -4,5 +4,6 @@ export interface AuthorityInformation {
     id: number;
     mobile: string;
     mail:string;
+    crNo:string;
   }
   

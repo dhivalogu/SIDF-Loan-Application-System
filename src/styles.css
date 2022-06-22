@@ -19,20 +19,12 @@ form {
 .row-flex {
   display: flex;
   flex-direction: row;
-  align-items: center;
-  align-content: center;
   margin: 2px;
-  flex-wrap: wrap;
 }
 .column-flex {
   display: flex;
-  flex-direction: column;
-  align-content: center;
-  justify-content: center;
-  align-items: center;
-  justify-items: center;
+  flex-direction: column; 
   margin: 2px;
-  flex-wrap: wrap;
 }
 
 .heading {
